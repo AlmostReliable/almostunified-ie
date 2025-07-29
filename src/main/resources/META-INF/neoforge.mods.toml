@@ -1,0 +1,42 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+issueTrackerURL = "https://github.com/${githubUser}/${githubRepo}/issues"
+license = "${license}"
+
+[[mixins]]
+config = "${modId}.mixins.json"
+
+[[mods]]
+modId = "${modId}"
+version = "${version}"
+displayName = "${modName}"
+authors = "${modAuthor}"
+description = '''${modDescription}'''
+
+[[dependencies."${modId}"]]
+modId = "minecraft"
+type = "REQUIRED"
+versionRange = "[${minecraftVersion},)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies."${modId}"]]
+modId = "neoforge"
+type = "REQUIRED"
+versionRange = "[${neoforgeVersion},)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies."${modId}"]]
+modId = "almostunified"
+type = "REQUIRED"
+versionRange = "[${auVersion},)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies."${modId}"]]
+modId = "immersiveengineering"
+type = "REQUIRED"
+versionRange = "[${ieVersion},)"
+ordering = "AFTER"
+side = "BOTH"
