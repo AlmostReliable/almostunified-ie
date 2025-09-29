@@ -40,7 +40,7 @@ public class IEApiMixin {
             Item secondItem = array[1].getItem();
             var secondTag = AlmostUnified.INSTANCE.getRelevantItemTag(secondItem);
 
-            if (firstTag.equals(secondTag)) {
+            if (!firstTag.equals(secondTag)) {
                 return;
             }
         }
