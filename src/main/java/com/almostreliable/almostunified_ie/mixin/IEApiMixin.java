@@ -30,7 +30,8 @@ public class IEApiMixin {
             return;
         }
 
-        Item firstItem = array[0].getItem();
+        ItemStack firstStack = array[0];
+        Item firstItem = firstStack.getItem();
         var firstTag = AlmostUnified.INSTANCE.getRelevantItemTag(firstItem);
         if (firstTag == null) {
             return;
@@ -47,7 +48,7 @@ public class IEApiMixin {
 
         Item preferredItem = AlmostUnified.INSTANCE.getTagTargetItem(firstTag);
         if (preferredItem != null) {
-            cir.setReturnValue(preferredItem.getDefaultInstance());
+            cir.setReturnValue(preferredItem.getDefaultInstance().copyWithCount(firstStack.getCount()));
         }
     }
 }
